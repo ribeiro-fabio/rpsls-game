@@ -7,3 +7,6 @@ class Action(Enum):
     SCISSORS = "Scissors"
     LIZARD = "Lizard"
     SPOCK = "Spock"
+
+    def __str__(self) -> str:
+        return self.value
