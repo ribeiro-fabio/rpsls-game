@@ -21,7 +21,7 @@ class CLI:
         return random.choice(self.ACTIONS)
 
     def display_player_action(self) -> None:
-        choices = [f"[{i + 1}]{action}" for i, action in enumerate(Action)]
+        choices = [f"[{i + 1}]{action}" for i, action in enumerate(self.ACTIONS)]
         print(f"Valid actions: {choices}")
 
     def display_rules(self) -> None:
