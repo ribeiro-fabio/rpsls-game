@@ -25,14 +25,23 @@ class CLI:
         print(f"Valid actions: {choices}")
 
     def display_rules(self) -> None:
-        pass
+        print("***The Rules: Scissors cuts Paper, Paper covers Rock,")
+        print("Rock crushes Lizard, Lizard poisons Spock,")
+        print("Spock smashes Scissors, Scissors decapitates Lizard,")
+        print("Lizard eats Paper, Paper disproves Spock,")
+        print("Spock vaporizes Rock, (and as it always has) Rock crushes Scissors.")
+        print("")
+        input("Press Enter to continue... ")
 
     def display_opening_message(self) -> None:
         print("****************************************************")
         print("Welcome to the Rock, Paper, Scissors, Lizard, Spock!")
         print("****************************************************")
+        print("")
 
 
 cli = CLI()
+cli.display_opening_message()
+cli.display_rules()
 cli.display_player_action()
 cli.get_player_action()
