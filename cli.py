@@ -20,12 +20,25 @@ class CLI:
     def get_cpu_action(self) -> Action:
         return random.choice(self.ACTIONS)
 
+    def get_player_name(self) -> str:
+        print(input("Enter your name: ").strip())
+        return input().capitalize()
+
     def display_player_action(self) -> None:
-        choices = [f"[{i + 1}]{action}" for i, action in enumerate(self.ACTIONS)]
+        choices = [f"[{i}]{action}" for i, action in enumerate(self.ACTIONS, start=1)]
         print(f"Valid actions: {choices}")
 
+    def display_tie(self) -> None:
+        print("It's a tie")
+
+    def display_winner(self, winner_name, winner_action: Action) -> None:
+        print(f"{winner_name} {winner_action} wins!")
+
+    def display_round(self, player_action: Action, cpu_action: Action) -> None:
+        print(f"(Player) -> {player_action} x (CPU) -> {cpu_action}")
+
     def display_rules(self) -> None:
-        print("***The Rules: Scissors cuts Paper, Paper covers Rock,")
+        print("*** The Rules: Scissors cuts Paper, Paper covers Rock,")
         print("Rock crushes Lizard, Lizard poisons Spock,")
         print("Spock smashes Scissors, Scissors decapitates Lizard,")
         print("Lizard eats Paper, Paper disproves Spock,")
@@ -38,10 +51,3 @@ class CLI:
         print("Welcome to the Rock, Paper, Scissors, Lizard, Spock!")
         print("****************************************************")
         print("")
-
-
-cli = CLI()
-cli.display_opening_message()
-cli.display_rules()
-cli.display_player_action()
-cli.get_player_action()
