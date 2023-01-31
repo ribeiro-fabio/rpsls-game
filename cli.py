@@ -31,11 +31,11 @@ class CLI:
     def display_tie(self) -> None:
         print("It's a tie")
 
-    def display_winner(self, winner_name, winner_action: Action) -> None:
+    def display_winner(self, winner_name, winner_action) -> None:
         print(f"{winner_name} {winner_action} wins!")
 
-    def display_round(self, player_action: Action, cpu_action: Action) -> None:
-        print(f"(Player) -> {player_action} x (CPU) -> {cpu_action}")
+    def display_round(self, player_name, cpu, player_action, cpu_action) -> None:
+        print(f"({player_name}) -> {player_action} x ({cpu}) -> {cpu_action}")
 
     def display_rules(self) -> None:
         print("*** The Rules: Scissors cuts Paper, Paper covers Rock,")
