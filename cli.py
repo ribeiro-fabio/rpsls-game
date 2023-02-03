@@ -21,30 +21,30 @@ class CLI:
         return random.choice(self.ACTIONS)
 
     def get_player_name(self) -> str:
-        print(input("Enter your name: ").strip())
-        return input().capitalize()
+        player_name = input("Enter your name: ")
+        return player_name.strip()
 
     def display_player_action(self) -> None:
         choices = [f"[{i}]{action}" for i, action in enumerate(self.ACTIONS, start=1)]
         print(f"Valid actions: {choices}")
 
     def display_tie(self) -> None:
-        print("It's a tie")
+        print("*** It's a tie *** \n")
 
     def display_winner(self, winner_name, winner_action) -> None:
-        print(f"{winner_name} {winner_action} wins!")
+        print(f"*** [{winner_name}] -> {winner_action} wins! *** \n")
 
     def display_round(self, player_name, cpu, player_action, cpu_action) -> None:
-        print(f"({player_name}) -> {player_action} x ({cpu}) -> {cpu_action}")
+        print(f"\n*** [{player_name}] {player_action} x [{cpu}] {cpu_action} ***\n")
 
     def display_rules(self) -> None:
         print("*** The Rules: Scissors cuts Paper, Paper covers Rock,")
         print("Rock crushes Lizard, Lizard poisons Spock,")
         print("Spock smashes Scissors, Scissors decapitates Lizard,")
         print("Lizard eats Paper, Paper disproves Spock,")
-        print("Spock vaporizes Rock, (and as it always has) Rock crushes Scissors.")
-        print("")
+        print("Spock vaporizes Rock, (and as it always has) Rock crushes Scissors.\n")
         input("Press Enter to continue... ")
+        print("")
 
     def display_opening_message(self) -> None:
         print("****************************************************")
