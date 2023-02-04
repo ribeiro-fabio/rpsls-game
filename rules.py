@@ -2,7 +2,7 @@ from action import Action
 
 
 class Rules:
-    victories = {
+    __VICTORIES = {
         Action.ROCK: {Action.SCISSORS, Action.LIZARD},
         Action.PAPER: {Action.ROCK, Action.SPOCK},
         Action.SCISSORS: {Action.PAPER, Action.LIZARD},
@@ -12,9 +12,9 @@ class Rules:
 
     @staticmethod
     def get_winner(action1: Action, action2: Action):
-        if action1 in Rules.victories[action2]:
+        if action1 in Rules.__VICTORIES[action2]:
             return action2
-        elif action2 in Rules.victories[action1]:
+        elif action2 in Rules.__VICTORIES[action1]:
             return action1
         else:
             return None, "It's a tie"
