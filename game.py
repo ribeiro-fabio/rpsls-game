@@ -7,12 +7,11 @@ class Game:
         self.cli = CLI()
         self.rules = Rules()
 
-    def play(self):
+    def turn(self):
+        # separar lógica do jogo da chamada do jogo
         player_name = self.cli.get_player_name()
         cpu = "CPU"
 
-        self.cli.display_opening_message()
-        self.cli.display_rules()
         self.cli.display_player_action()
 
         player_action = self.cli.get_player_action()
@@ -27,3 +26,15 @@ class Game:
             self.cli.display_winner(cpu, winner)
         else:
             self.cli.display_tie()
+
+    def play(self):
+        self.cli.display_opening_message()
+        self.cli.display_rules()
+        turns = 3
+        try:
+                play_again = input("Play again? (y/n): ")
+                print("")
+                if play_again.lower() != "y":
+                    break
+            except ValueError:
+                print("Please enter y or n.")
