@@ -10,8 +10,8 @@ class Rules:
         Action.SPOCK: {Action.ROCK, Action.SCISSORS},
     }
 
-    @staticmethod
-    def get_winner(action1: Action, action2: Action):
+    @classmethod
+    def get_winner(cls, action1: Action, action2: Action):
         if action1 in Rules.__VICTORIES[action2]:
             return action2
         elif action2 in Rules.__VICTORIES[action1]:
