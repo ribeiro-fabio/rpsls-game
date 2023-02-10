@@ -13,7 +13,7 @@ class CLI:
                 if selection in range(1, len(self.ACTIONS) + 1):
                     return self.ACTIONS[selection - 1]
                 else:
-                    print("That was no valid number. Try again.")
+                    print("Invalid input. Enter a valid number.")
             except ValueError:
                 print("You entered something other than a number. Try again.")
 
