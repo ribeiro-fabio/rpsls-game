@@ -1,4 +1,4 @@
-# Rock, Paper, Lizard, Spock!
+# Rock, Paper, Scissors, Lizard, Spock!
 
 [![Badge](https://img.shields.io/badge/Made_with-Python-blue?style=for-the-badge&logo=Python)](https://python.org/)
 ![Badge](https://img.shields.io/badge/Status-Concluído-brightgreen?style=for-the-badge)
